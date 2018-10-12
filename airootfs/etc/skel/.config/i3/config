@@ -1,0 +1,203 @@
+#                                  ██ ██████
+#                                  ██      ██
+#                                  ██  █████
+#                                  ██      ██
+#                                  ██ ██████
+
+set $mod Mod4
+
+# Font
+#font pango:Monaco 14
+font pango:ClearSansMedium 9
+
+# Key for drag windows (mouse+$mod)
+floating_modifier $mod
+
+#Terminal 
+bindsym $mod+Return exec --no-startup-id termite
+#bindsym $mod+Return exec --no-startup-id "urxvt -name floating"
+#bindsym $mod+r exec --no-startup-id "urxvt -name float -e ranger"
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Start dmenu (a program launcher)
+#bindsym $mod+d exec --no-startup-id ~/.scripts/drun.sh
+
+bindsym $mod+d exec --no-startup-id rofi -show drun
+
+# Change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# Alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# Alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Split in horizontal orientation
+bindsym $mod+h split h
+
+# Split in vertical orientation
+bindsym $mod+v split v
+
+# Enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# Change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# Toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# Focus the parent container
+bindsym $mod+a focus parent
+
+# Switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace
+bindsym $mod+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Bar setup
+#bar {
+#    tray_output none
+#    mode invisible
+#}
+
+# variables de colores
+set $bg-color            #2f343f
+set $inactive-bg-color   #2f343f
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
+
+# window colors
+#                       border              background         text                 indicator
+client.focused          $bg-color           $bg-color          $text-color          #00ff00
+client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
+client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
+client.urgent $urgent-bg-color $urgent-bg-color $text-color #00ff00
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+
+# fn keys binds
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+#bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
+#bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
+#bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+#bindsym XF86TouchpadToggle exec ~/.scripts/touchpadtoggle.sh
+
+# Next layout
+bindsym $mod+space exec --no-startup-id xkblayout-state set +1
+
+# Make screenshot
+bindsym --release Print exec scrot ~/Screenshots/Screenshot_%d-%m-%y-%T.png
+# Make screenshot current window (Alt+Print)
+bindsym --release Mod1+Sys_Req exec scrot -u ~/Screenshots/Screenshot_%d-%m-%y-%T.png
+# Make screenshot for selected window
+bindsym --release Shift+Print exec scrot -s ~/Screenshots/Screenshot_%d-%m-%y-%T.png
+
+
+# Remove border while only one window opens
+smart_borders on
+
+new_window pixel 1
+new_float pixel 1
+
+#calamares
+exec sudo calamares&
+
+#Resize img
+# gifsicle --resize 1366x768 wl7.gif -o bg.gif
+
+#polybar
+exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
+
+#Network-manager-applet
+exec --no-startup-id nm-applet
+
+#VolumeIcon
+exec --no-startup-id volumeicon
+
+#Udiskie for management usb key/hd
+exec --no-startup-id udiskie -t &
+
+#Redshift da aur
+#exec --no-startup-id redshift-gtk
+
+#Tint2
+#exec --no-startup-id tint2 &
+
+# Nitrogen Manager wallpaper
+#exec --no-startup-id nitrogen --restore &
+
+#Animate background
+exec_always --no-startup-id "xwinwrap -ov -ni -fs -- gifview -w WID /usr/share/wallpapers/Animated/bg.gif -a"
+
+#High CPU
+#exec_always --no-startup-id "xwinwrap -ov -ni -fs -- mpv -vo x11 -wid WID --keepaspect=no --loop /usr/share/wallpapers/bg.gif"
+
+# Setup keyboard layout it and us
+exec --no-startup-id "setxkbmap -layout it,us -option 'grp:win_space_toggle,grp_led:scroll'"
+
+# Setup normal wallpaper
+#exec feh --bg-scale "~/usr/share/wallpapers/1.jpg"
+
+# Double buffering
+#exec compton
+
+#NumLock
+exec --no-startup-id "numlockx"
+# Compton
+exec --no-startup-id compton -f
+
+#Redshift
+#exec --no-startup-id redshift-gtk
+
+# vim: ft=i3
