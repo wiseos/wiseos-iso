@@ -58,7 +58,7 @@ sed -i 's/#\(HandleHibernateKey=\)hibernate/\1ignore/' /etc/systemd/logind.conf
 sed -i 's/#\(HandleLidSwitch=\)suspend/\1ignore/' /etc/systemd/logind.conf
 
 #Services
-systemctl enable pacman-init.service choose-mirror.service
+#systemctl enable pacman-init.service choose-mirror.service
 systemctl enable lightdm.service
 systemctl enable NetworkManager.service
 #systemctl enable org.cups.cupsd.service
@@ -68,7 +68,7 @@ systemctl enable avahi-daemon.service
 systemctl set-default graphical.target
 
 #systemctl set-default multi-user.target
-rm -fr /etc/pacman.d/gnupg
+#rm -fr /etc/pacman.d/gnupg
 
 pacman-key --init 
 pacman-key --populate archlinux 
