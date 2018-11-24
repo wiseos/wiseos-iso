@@ -137,21 +137,13 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym $mod+space exec --no-startup-id xkblayout-state set +1
 
 # Make screenshot
-bindsym --release Print exec scrot ~/Screenshots/Screenshot_%d-%m-%y-%T.png
-# Make screenshot current window (Alt+Print)
-bindsym --release Mod1+Sys_Req exec scrot -u ~/Screenshots/Screenshot_%d-%m-%y-%T.png
-# Make screenshot for selected window
-bindsym --release Shift+Print exec scrot -s ~/Screenshots/Screenshot_%d-%m-%y-%T.png
-
+bindsym Print exec ~/.config/i3/scripts/scrot.sh
 
 # Remove border while only one window opens
 smart_borders on
 
 new_window pixel 1
 new_float pixel 1
-
-#calamares
-exec sudo calamares&
 
 #Resize img
 # gifsicle --resize 1366x768 wl7.gif -o bg.gif
@@ -175,7 +167,7 @@ exec --no-startup-id udiskie -t &
 #exec --no-startup-id tint2 &
 
 # Nitrogen Manager wallpaper
-#exec --no-startup-id nitrogen --restore &
+#exec --no-startup-id nitrogen --restore 
 
 #Animate background
 exec_always --no-startup-id "xwinwrap -ov -ni -fs -- gifview -w WID /usr/share/wallpapers/Animated/bg.gif -a"
