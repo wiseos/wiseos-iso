@@ -161,6 +161,12 @@ htop
 udiskie
 newsboat
 
+#pdf&co
+zathura
+zathura-cb
+zathura-pdf-mupdf
+zathura-ps
+
 #VirtualBox
 #linux
 linux-headers
