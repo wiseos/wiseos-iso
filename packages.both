@@ -52,7 +52,7 @@ sudo
 tcpdump
 testdisk
 usb_modeswitch
-vim
+gvim
 vpnc
 wget
 wireless_tools
@@ -160,6 +160,7 @@ mpv
 htop
 udiskie
 newsboat
+neofetch
 
 #pdf&co
 zathura
