@@ -59,7 +59,7 @@ font-5 = "unifont:fontformat=truetype:size=11:antialias=false;0"
 
 modules-left = i3 
 modules-right = date
-modules-center = mpd
+modules-center = title
 
 tray-position = right
 tray-detached = false
@@ -183,7 +183,7 @@ font-4 = "Material Icons:antialias=false:size=12;3"
 font-5 = "unifont:fontformat=truetype:size=11:antialias=false;0"
 
 modules-left = rss 
-modules-center =  title
+modules-center =  mpd
 modules-right = xkeyboard cpu memory temperature battery off
 # wm-restack = i3
 # override-redirect = false

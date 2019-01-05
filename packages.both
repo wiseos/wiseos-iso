@@ -162,6 +162,10 @@ udiskie
 newsboat
 neofetch
 
+#management images
+w3m
+imagemagick
+
 #pdf&co
 zathura
 zathura-cb

@@ -1,8 +1,8 @@
-NAME="WiseOs"
+NAME="WiseOS"
 ID=WiseOs
 ID_LIKE="arch"
 VERSION_ID=x86_64
-PRETTY_NAME="Quark"
+PRETTY_NAME="WiseOS"
 ANSI_COLOR="0;36"
 HOME_URL="https://wiseos.it"
 SUPPORT_URL="http://wiseos.it/forum"
