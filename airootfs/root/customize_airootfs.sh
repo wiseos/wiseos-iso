@@ -39,10 +39,10 @@ groupadd -r nopasswdlogin
 gpasswd -a liveuser nopasswdlogin
 
 #autorun calamares
-mkdir -p /home/liveuser/.config/autostart
-ln -s /usr/share/applications/calamares-wiseOS.desktop /home/liveuser/.config/autostart/calamares.desktop
-chmod +rx /home/liveuser/.config/autostart/calamares.desktop
-chown liveuser /home/liveuser/.config/autostart/calamares.desktop
+#mkdir -p /home/liveuser/.config/autostart
+#ln -s /usr/share/applications/calamares-wiseOS.desktop /home/liveuser/.config/autostart/calamares.desktop
+#chmod +rx /home/liveuser/.config/autostart/calamares.desktop
+#chown liveuser /home/liveuser/.config/autostart/calamares.desktop
 
 ###
 #mkdir -p /home/liveuser/.config/autostart

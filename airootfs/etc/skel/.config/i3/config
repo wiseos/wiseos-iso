@@ -170,7 +170,7 @@ exec --no-startup-id udiskie -t &
 #exec --no-startup-id nitrogen --restore 
 
 #Animate background
-#exec_always --no-startup-id "xwinwrap -ov -ni -fs -- gifview -w WID /usr/share/wallpapers/Animated/bg.gif -a"
+exec_always --no-startup-id "xwinwrap -ov -ni -fs -- gifview -w WID /usr/share/wallpapers/Animated/bg.gif -a"
 
 #High CPU
 #exec_always --no-startup-id "xwinwrap -ov -ni -fs -- mpv -vo x11 -wid WID --keepaspect=no --loop /usr/share/wallpapers/bg.gif"
