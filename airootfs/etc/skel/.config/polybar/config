@@ -1,152 +1,12 @@
 [colors]
-accent = #5a74ca
-background = ${xrdb:background}
-background-alt = ${xrdb:color4}
-foreground = ${xrdb:foreground}
-foreground-alt = ${xrdb:color7}
-primary = ${xrdb:color6}
-secondary = ${xrdb:color13}
-alert = ${xrdb:color5}
-# 
-red = ${xrdb:color1}
-green = ${xrdb:color2}
-yellow = ${xrdb:color3}
-blue = ${xrdb:color4}
-magenta = ${xrdb:color5}
-cyan = ${xrdb:color6}
-white = ${xrdb:color7}
+include-file = ~/.config/polybar/colors
 
 [settings]
-screenchange-reload = true
+#screenchange-reload = true
 
 [global/wm]
 margin-top = 0
 margin-bottom = 0
-
-####################################################################################
-[bar/bottom]
-monitor = ${env:MONITOR}
-width = 100%
-height = 28
-offset-x = 0
-offset-y = 0
-fixed-center = true
-bottom = true
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-line-size = 0
-line-color = #f00
-
-border-size = 0
-border-color = #00000000
-
-padding-left = 1
-padding-right = 1
-
-module-margin-left = 2
-module-margin-right = 0
-
-font-0 = RobotoMonoMedium:size=11:antialias=true;2
-# Cat unicode: echo -e "\uF31A"
-font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=10;2"
-font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=10;2"
-font-3 = "Font Awesome 5 Brands:pixelsize=10;2"
-font-4 = "Material Icons:antialias=false:size=12;3"
-font-5 = "unifont:fontformat=truetype:size=11:antialias=false;0"
-
-
-modules-left = i3 
-modules-right = date
-modules-center = title
-
-tray-position = right
-tray-detached = false
-tray-maxsize = 16
-# tray-transparent = true
-tray-background = ${colors.background}
-tray-offset-x = 0
-tray-offset-y = 0
-tray-padding = 0
-# tray-scale = 1.0
-
-# wm-restack = i3
-# override-redirect = false
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-[module/i3]
-type = internal/i3
-index-sort = true
-strip-wsnumbers = true
-enable-scroll = false
-format = <label-state> <label-mode>
-wrapping-scroll = false
-
-ws-icon-0 = 1;1
-ws-icon-1 = 2;2
-ws-icon-2 = 3;3
-ws-icon-3 = 4;4
-ws-icon-4 = 5;5
-ws-icon-5 = 6;6
-ws-icon-6 = 7;7
-ws-icon-7 = 8;8
-ws-icon-8 = 9;9
-ws-icon-9 = 10;10
-
-label-mode = %mode%
-label-mode-padding = 1
-
-; focused = Active workspace on focused monitor
-label-focused = %icon%
-label-focused-foreground = ${colors.accent}
-label-focused-background =
-label-focused-underline = ${colors.primary}
-label-focused-padding = 1
-
-; unfocused = Inactive workspace on any monitor
-label-unfocused = %icon%
-label-unfocused-padding = 1
-
-; visible = Active workspace on unfocused monitor
-label-visible = %icon%
-label-visible-foreground = ${self.label-focused-foreground}
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
-
-; urgent = Workspace with urgency hint set
-label-urgent = %icon%
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 1
-
-[module/alsa]
-type = internal/alsa
-format-volume = <ramp-volume> <label-volume>
-format-muted =  0%
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
-ramp-volume-foreground = ${colors.primary}
-
-[module/date]
-type = internal/date
-interval = 5
-
-date = " %d-%m-%Y"
-date-alt = " %d-%m-%Y"
-
-time = %H:%M
-# time-alt = %H:%M:%S
-time-alt = %a %d.%m.%Y
-
-format-prefix = " "
-format-prefix-foreground = ${colors.primary}
-format-underline = #0a6cf5
-
-label = %time%
 
 ########################################################################################
 # //////////////////////////////////////
@@ -158,6 +18,7 @@ offset-x = 0
 offset-y = 0
 fixed-center = true
 bottom = false
+enable-ipc = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -174,29 +35,80 @@ padding-right = 1
 module-margin-left = 2
 module-margin-right = 0
 
-font-0 = RobotoMonoMedium:size=11:antialias=true;2
-# Cat unicode: echo -e "\uF31A"
-font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=10;2"
-font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=10;2"
-font-3 = "Font Awesome 5 Brands:pixelsize=10;2"
-font-4 = "Material Icons:antialias=false:size=12;3"
-font-5 = "unifont:fontformat=truetype:size=11:antialias=false;0"
+font-0 = "DejaVu Sans:pixelsize=14;3"
+font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=14;3"
+font-2 = "Weather Icons:size=12;3"
+font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=14;3"
+font-4 = "Font Awesome 5 Brands:pixelsize=14;3"
 
-modules-left = rss 
-modules-center =  mpd
-modules-right = xkeyboard cpu memory temperature battery off
+
+modules-left = rss gmail tor openweathermap
+modules-center = i3
+modules-right = xkeyboard cpu memory battery netstat updates-arch-combined date
+
 # wm-restack = i3
 # override-redirect = false
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+tray-position = right
+tray-detached = false
+#tray-maxsize = 20
+# tray-transparent = true
+tray-background = ${colors.background}
+tray-offset-x = 0
+tray-offset-y = 0
+tray-padding = 0
+# tray-scale = 1.0
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+strip-wsnumbers = true
+pin-workspaces = false
+
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+label-focused = %icon%
+label-focused-background = ${colors.blue}
+label-focused-underline = ${colors.primary}
+label-focused-padding = 1
+
+label-unfocused = %icon%
+label-unfocused-padding = 1
+
+#%icon%
+label-urgent = %icon%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+
+label-visible = %icon%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+ws-icon-0 = 1;❶
+ws-icon-1 = 2;❷
+ws-icon-2 = 3;❸
+ws-icon-3 = 4;❹
+ws-icon-4 = 5;❺
+ws-icon-5 = 6;❻
+ws-icon-6 = 7;❼
+ws-icon-7 = 8;❽
+ws-icon-8 = 9;❾
+ws-icon-9 = 10;❿
+
+icon-default = 
 
 [module/title]
 type = internal/xwindow
 format-padding = 1
 label = %title%
 label-maxlen = 20
-
 
 [module/mail]
 type = custom/script
@@ -205,81 +117,61 @@ interval = 600
 format = " <label> "
 format-prefix = " "
 format-prefix-foreground = ${colors.primary}
-exec = ~/.config/polybar/script/mails.sh
-click-left = termite -e mutt
-
-[module/app]
-type = custom/text
-content = 
-content-foreground = ${colors.primary}
-#click-left = ulauncher
-click-left = ~/.bin/rofi-favapp
-click-right = 
+exec = ~/.config/polybar/scripts/mails.sh
+;click-left = termite -e mutt
 
 [module/rss]
 type = custom/text
 content = 
-content-foreground = ${colors.primary}
-click-left = termite -e newsboat -r &
+;content-foreground = ${colors.primary}
+click-left = termite -e newsboat &
 click-right = 
 
 [module/cpu]
 type = internal/cpu
 interval = 2
 format-prefix = " "
-format-prefix-foreground = ${colors.primary}
+format-prefix-foreground = #3c909b
 label = %percentage%%
 
 [module/memory]
 type = internal/memory
 interval = 2
 format-prefix = " "
-format-prefix-foreground = ${colors.primary}
+format-prefix-foreground = #e5c07b
 label = %percentage_used%%
 
-[module/temperature]
-type = internal/temperature
-#content = 🌡
-thermal-zone = 0
-warn-temperature = 60
-
-format = <ramp> <label>
-format-warn = <ramp> <label-warn>
-
-label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.primary}
-
-
-#Normal mpd
 [module/mpd]
 type = internal/mpd
-host = 127.0.0.1
-port = 6600
+interval = 1
+format-online =  <label-song> <label-time> <icon-prev>  <icon-seekb>  <icon-stop>  <toggle>  <icon-seekf>  <icon-next>  <icon-repeat>  <icon-random>
 
-format-online = <label-song> <label-time> <icon-prev> <icon-pause> <icon-play> <icon-next> 
+label-offline = mpd is offline
 
-icon-prev = 
+label-song =  %artist%-%title%
+; Awesome Font >                    
 icon-play = 
 icon-pause = 
-icon-next = 
+icon-stop =  
+icon-prev = 
+icon-next = 
+icon-seekb = 
+icon-seekf = 
+icon-random = 
+icon-repeat = 
+icon-repeatone = 
 
 toggle-on-foreground = ${colors.primary}
 toggle-off-foreground = ${colors.secondary}
 
-label-offline = no sound
-
+;label-song-maxlen = 25
+;label-song-ellipsis = true
 
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
 format-prefix = " "
-format-prefix-foreground = ${colors.primary}
+format-prefix-foreground = #9a52af
 label = %layout%
 
 
@@ -340,5 +232,71 @@ animation-charging-framerate = 750
 type = custom/text
 content = 
 content-foreground = ${colors.primary}
-click-left = ~/.config/polybar/script/logout.sh
+click-left = ~/.config/polybar/scripts/logout.sh
 content-margin-right = 0
+
+[module/updates-arch-combined]
+type = custom/script
+exec = ~/.config/polybar/scripts/updates.sh
+content-foreground = ${colors.primary}
+interval = 600
+;600 = 10mins
+
+[module/date]
+type = internal/date
+
+interval = 5
+
+date = %d/%m/%y
+time = %H:%M
+
+;date-alt = %A, %d %B %Y
+;time-alt = %H:%M:%S
+
+label = %date% %time%
+format =  <label>
+;format-background = #ddffffff
+;format-background = #88000000
+format-foreground = #61afef
+;format-padding = 3j
+
+[module/gmail]
+type = custom/script
+exec = ~/.config/polybar/scripts/gmail/launch.py
+tail = true
+click-left = xdg-open https://mail.google.com
+interval = 600
+
+[module/netstat]
+type = internal/network
+interface = enp2s0
+interval = 3.0
+format-prefix-foreground = ${colors.primary}
+label-connected = "%{F#ff0000} %{F-}%upspeed% %{F#00ff00} %{F-}%downspeed%"
+
+[module/info-redshift-temp]
+type = custom/script
+exec = ~/.config/polybar/scripts/info-redshift-temp.sh
+interval = 5
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = "%{F#00ff00} %{F-}"
+format = <label>
+exec = python ~/.config/polybar/scripts/spotify_status.py -f '{artist}: {song}'
+format-underline = #1db954
+
+[module/tor]
+type = custom/script
+exec = ~/.config/polybar/scripts/status.sh tor
+interval = 6
+format = <label>
+format-padding = 1
+
+[module/openweathermap]
+type = custom/script
+exec = ~/.config/polybar/scripts/openweathermap.sh
+interval = 600
+label-font = 3
+

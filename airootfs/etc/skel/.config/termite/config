@@ -7,7 +7,7 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-font = Hack 10
+font = DejaVu Sans Mono 11
 scrollback_lines = 10000
 search_wrap = true
 icon_name = utilities-terminal
@@ -18,38 +18,44 @@ cursor_shape = block
 browser = exo-open
 filter_unmatched_urls = true
 
+# one dark
 [colors]
-background = rgba(43,48,59,0.80)
-foreground = #c0c5ce
-foreground_bold = #c0c5ce
-cursor = #c0c5ce
 
-# Black, Gray, Silver, White
-color0 = #2b303b
-color8 = #65737e
-color7 = #F6F6F6
-color15 = #c0c5ce
+# special
+foreground      = #abb2bf
+foreground_bold = #abb2bf
+cursor          =
+background      = #282c34
 
-# Red
-color1 = #bf616a
-color9 = #bf616a
+# black
+color0  = #282c34
+color8  = #5c6370
 
-# Green
-color2 = #a3be8c
-color10 = #a3be8c
+# red
+color1  = #e06c75
+color9  = #be5046
 
-# Yellow
-color3 = #ebcb8b
-color11 = #ebcb8b
+# green
+color2  = #98c379
+color10 = #7a9f60
 
-# Blue
-color4 = #8fa1b3
-color12 = #8fa1b3
+# yellow
+color3  = #e5c07b
+color11 = #d19a66
 
-# Purple
-color5 = #b48ead
-color13 = #b48ead
+# blue
+color4  = #61afef
+color12 = #3b84c0
 
-# Teal
-color6 = #96b5b4
-color14 = #96b5b4
+# magenta
+color5  = #c678dd
+color13 = #9a52af
+
+# cyan
+color6  = #56b6c2
+color14 = #3c909b
+
+# white
+color7  = #abb2bf
+color15 = #828997
+
