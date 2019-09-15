@@ -72,8 +72,6 @@ systemctl set-default graphical.target
 
 pacman-key --init 
 pacman-key --populate archlinux 
-pacman-key --populate wiseos
-pacman-key --lsign-key 3E9F489D3AFBA5C475FE68522544653118820C07
 
 pacman -Scc --noconfirm
 pacman -Syyu --noconfirm
