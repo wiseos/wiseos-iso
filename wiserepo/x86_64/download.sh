@@ -1,4 +1,5 @@
 #!/bin/bash
+
 function calamares {
 	git clone https://github.com/wiseos/wiseos-pkgbuild.git
 	cd wiseos-pkgbuild/calamares-git 
@@ -12,21 +13,15 @@ function download {
 }
 
 #TODO need optimization with un loop from file
-calamares
+input="./aur"
 
-download cava
-download yay
-download polybar
-download shantz-xwinwrap-bzr
-download ckbcomp
-download betterlockscreen 
-download mkinitcpio-openswap
-download gotop
-download curseradio-git
-download ttf-weather-icons
-download nerd-fonts-hack
-download nerd-fonts-iosevka
-download wpa_actiond
+while IFS= read -r line
+do
+	echo "$line"
+	if [ -n "${line}" ]; then
+		download "$line"
+	fi
+done < "$input"
 
 
 echo "####################################"
