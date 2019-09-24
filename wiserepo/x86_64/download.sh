@@ -11,23 +11,19 @@ function download {
 	makepkg -s . && mv *.tar.xz .. && cd .. && rm -rf $1 && rm $1.tar.gz
 }
 
-#TODO need optimization with un loop from file
-calamares
+#calamares
 
-download cava
-download yay
-download polybar
-download shantz-xwinwrap-bzr
-download ckbcomp
-download betterlockscreen 
-download mkinitcpio-openswap
-download gotop
-download curseradio-git
-download ttf-weather-icons
-download nerd-fonts-hack
-download nerd-fonts-iosevka
-download wpa_actiond
+input="./aur"
 
+#TODO check aur formatting
+
+while IFS= read -r line
+do	
+	echo "$line"	
+	if [ -n "${line}" ]; then	
+		download "$line"
+	fi
+done < "$input"
 
 echo "####################################"
 echo "Repo Downloaded!!"
