@@ -175,6 +175,9 @@ zathura-cb
 zathura-pdf-mupdf
 zathura-ps
 
+#Dev
+nodejs
+
 #VirtualBox
 #linux
 linux-headers
@@ -188,10 +191,11 @@ yay
 cava
 calamares
 betterlockscreen
-#wiseos-mirrorlist
+
 #calamares dep
 mkinitcpio-openswap
 ckbcomp   
+#
 gotop
 curseradio-git
 ttf-weather-icons
