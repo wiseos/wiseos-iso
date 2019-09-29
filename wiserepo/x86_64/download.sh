@@ -2,17 +2,17 @@
 function calamares {
 	git clone https://github.com/wiseos/calamares.git
 	cd calamares/pkg
-	makepkg -s . && mv *.tar.xz ../.. && cd .. && cd .. && rm -rf && rm -rf wiseos-pkgbuild
+	makepkg -s . && mv *.tar.xz ../.. && cd ../../ && rm -rf #&& rm -rf wiseos-pkgbuild
 }
 
 function download {
 	wget https://aur.archlinux.org/cgit/aur.git/snapshot/$1.tar.gz
 	tar -xvf $1.tar.gz && cd $1
 	#testing delete file
-	makepkg -s . && mv *.tar.xz .. && cd .. && rm -rf $1 && rm $1.tar.gz
+	makepkg -s . && mv *.tar.xz ../ && cd ../ && rm -rf $1 
 }
 
-calamares
+#calamares
 
 input="./aur"
 
